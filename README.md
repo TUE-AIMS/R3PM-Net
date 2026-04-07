@@ -27,12 +27,12 @@ To address the gap between synthetic datasets and real-world industrial data, we
       <td align="center">
         <img src="assets/sioux_cranfield.png" height="250">
         <br>
-        <sub><b>MVTec-AD</b></sub>
+        <sub><b>Sioux-Cranfield</b></sub>
       </td>
       <td align="center">
         <img src="assets/sioux_scans.png" height="250">
         <br>
-        <sub><b>VisA </b></sub>
+        <sub><b>Sioux-Scans</b></sub>
       </td>
     </tr>
   </table>

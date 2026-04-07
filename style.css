@@ -146,6 +146,12 @@ h2{
   margin-top:10px;
 }
 
+.figure-sm {
+  width: 40% !important;
+  max-width: 400px;
+  margin: 10px auto;
+}
+
 .caption{
   font-size:0.92rem;
   color:#555;
