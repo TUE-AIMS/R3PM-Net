@@ -1,0 +1,14 @@
+--pcdPath /home/ykashefbahrami/r3pm_net/data/sioux_scans/teeth_clean.ply
+--cadPath /home/ykashefbahrami/r3pm_net/data/sioux_cranfield/teeth.stl
+--action combine_dataset_dict
+--name teeth
+--every_k_points 100
+--num_transformation 50
+--angles 0 90 180
+--translation_range -1 1
+--dataset_size 50
+--index 0
+--noise_level 0
+--outlier_level 0
+--outlier_bounds -0.05 0.05
+--occ_level 0

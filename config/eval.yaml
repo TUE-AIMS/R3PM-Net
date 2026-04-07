@@ -1,0 +1,28 @@
+# Paths for scripts/evaluation (loaded by scripts/*.py).
+
+data_root: data
+pretrained_rpmnet_dir: checkpoints
+
+modelnet40:
+  dataset_path: /home/ykashefbahrami/point_cloud_registration/data/ModelNet40
+  cache_dir: data/down_sampled_modelnet40
+
+sioux:
+  base_dir: data
+  
+methods:
+  geotransformer:
+    root: /home/ykashefbahrami/GeoTransformer
+    exp_subdir: /home/ykashefbahrami/GeoTransformer/experiments/geotransformer.modelnet.rpmnet.stage4.gse.k3.max.oacl.stage2.sinkhorn
+    weights_path: /home/ykashefbahrami/GeoTransformer/weights/geotransformer-modelnet.pth.tar
+  predator:
+    root: /home/ykashefbahrami/master_thesis/OverlapPredator
+    config_path: /home/ykashefbahrami/master_thesis/OverlapPredator/configs/test/modelnet.yaml
+    weights_path: null
+  logdesc:
+    root: /home/ykashefbahrami/LoGDesc
+    weights_path: /home/ykashefbahrami/LoGDesc/pre-trained/best_model.pth
+  regtr:
+    root: /home/ykashefbahrami/RegTR
+    ckpt_path: /home/ykashefbahrami/RegTR/trained_models/modelnet/ckpt/model-best.pth
+    config_path: /home/ykashefbahrami/RegTR/trained_models/modelnet/config.yaml

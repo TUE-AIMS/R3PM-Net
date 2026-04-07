@@ -1,0 +1,16 @@
+name: r3pm_net
+channels:
+  - conda-forge
+  - pytorch
+dependencies:
+  - python=3.9 
+  - pip
+  - open3d
+  - pytorch
+  - hatchling
+  - ipykernel
+  - pip:
+      - tabulate
+      - pyyaml
+      - -e .
+

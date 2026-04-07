@@ -1,0 +1,24 @@
+# Default training and data paths for R3PM-Net 
+
+exp_name: exp_r3pmnet
+eval: false
+save_dir: ""
+
+fine_tune_feature_extractor: tune
+transfer_weights: "" # Optional: leave empty to skip loading
+emb_dims: 1024
+symfn: max
+
+seed: 1234
+workers: 4
+batch_size: 5
+epochs: 2
+start_epoch: 0
+optimizer: Adam
+resume: ""
+pretrained: ""
+device: cuda:0
+
+# Pickled Registration Dataset dicts (keys: template, source, transformation)
+train_dict_path: data/simulators/data_dict_train.pkl
+test_dict_path: data/simulators/data_dict_test.pkl

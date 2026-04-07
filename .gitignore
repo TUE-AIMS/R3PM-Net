@@ -1,0 +1,11 @@
+__pycache__/
+*:*Zone.Identifier
+.ipynb_checkpoints/
+*.ipynb
+
+checkpoints/
+data/
+results/
+registration_plys/
+logs/
+notebooks/
