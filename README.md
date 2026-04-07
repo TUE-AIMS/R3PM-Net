@@ -7,22 +7,19 @@ This repository contains the official implementation of the paper:
 > **[R3PM-Net: Real-time, Robust, Real-world Point Matching Network (CVPRw 2026)]**
 
 
-<p align="center"> <img src="assets/r3pmnet_overview.png" width="85%"> </p>
-*Figure 1. Overview of the R3PM-Net Architecture. R3PM-Net employs an iterative Siamese framework for robust point cloud registration. The architecture includes four primary stages: (1) global-aware feature extraction employing shared MLPs to learn geometric similarities across a full receptive field; (2) correspondence estimation via a match matrix computed from feature distances; (3) outlier rejection driven by a parameter prediction module (4) transformation estimation using a differentiable SVD module to solve for the optimal rigid alignment (R∗, t∗). The estimated transformation is applied back to the source point cloud for iterative refinement.*
+<p align="center"> <img src="assets/r3pmnet_overview.png" width="95%"> </p>
+<p align="left"><i>Figure 1. Overview of the R3PM-Net Architecture. R3PM-Net employs an iterative Siamese framework for robust point cloud registration.</i></p>
 
 ## Introduction
 
-Accurate Point Cloud Registration (PCR) is an important task in 3D data processing, involving the estimation of a rigid transformation between two point clouds. While deep-learning methods have addressed key limitations of traditional non-learning approaches, they are developed and evaluated on clean, dense, synthetic datasets (limiting their generalizability to real-world industrial scenarios). We introduce **R3PM-Net**, a lightweight, global-aware, object-level point matching network designed to bridge this gap by prioritizing both generalizability and real-time efficiency.
+R3PM-Net is a lightweight, global-aware, object-level point matching network designed to bridge the gap between approaches trained and evaluated on clean, dense, synthetic and real-world industrial point cloud data by prioritizing both generalizability and real-time efficiency.
 
-<p align="center"> <img src="assets/teaser.png" width="85%"> </p>
-*Figure 2. Examples of R3PM-Net performance on the Sioux-Cranfield dataset*
+<p align="center"> <img src="assets/teaser.png" width="50%"> </p>
+<p align="left"><i>Figure 2. Examples of R3PM-Net performance on the Sioux-Cranfield dataset.</i></p>
 
 ### Datasets
 
 To address the gap between synthetic datasets and real-world industrial data, we propose two datasets, Sioux-Cranfield and Sioux-Scans. 
-
-
-
 
 <p align="center">
   <table>
@@ -40,8 +37,7 @@ To address the gap between synthetic datasets and real-world industrial data, we
     </tr>
   </table>
 </p>
-<p align="left">
-*Figure 3. CAD models of the Sioux-Cranfield dataset (Left). The first six belong to the Cranfield Assembly benchmark and the rest are contributions of this paper (Sioux dataset). Sioux-Scans point cloud data (Right). Target (blue) and Source (yellow) point clouds for seven distinct objects.*
+<p align="left"><i>Figure 3. CAD models of the Sioux-Cranfield dataset (Left). The first six belong to the Cranfield Assembly benchmark and the rest are contributions of this paper (Sioux dataset). Sioux-Scans point cloud data (Right). Target (blue) and Source (yellow) point clouds for seven distinct objects.</i></p>
 
 ## Environment Setup
 
@@ -55,10 +51,10 @@ pip install -e .
 ```
 
 To run the evaluations, please refer to each method's repo to set up the environment:
-[Predator](https://github.com/prs-eth/OverlapPredator)
-[GeoTransformer](https://github.com/qinzheng93/geotransformer)
-[LoGDesc](https://github.com/karim416/LoGDesc)
-[RegTR](https://github.com/yewzijian/regtr)
+[Predator](https://github.com/prs-eth/OverlapPredator),
+[GeoTransformer](https://github.com/qinzheng93/geotransformer),
+[LoGDesc](https://github.com/karim416/LoGDesc), and 
+[RegTR](https://github.com/yewzijian/regtr).
 
 Everything must be installed into the **same** conda enviromnet.
 
@@ -214,7 +210,7 @@ python scripts/eval_sioux_cranfield.py
 ### Sioux-Scans
 <p align="center"> <img src="assets/success_cases.png" width="85%"> </p>
 
-*Figure 4. Qualitative registration results of R3PM-Net on real-world event-camera data. It successfully aligns the ``teeth" and ``cube" models.*
+<p align="left"><i>Figure 4. Qualitative registration results of R3PM-Net on real-world event-camera data. It successfully aligns the "teeth" and "cube" models. The fine-tuned version also solves the "lime" and "house".</i></p>
 
 ## Acknowledgement
 
