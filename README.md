@@ -221,7 +221,14 @@ We adapted some codes from some awesome repositories including [Learning3D](http
 If you find this repository useful, please consider citing:
 
 ```bibtex
-@misc{
+@misc{kashefbahrami2026r3pmnetrealtimerobustrealworld,
+      title={R3PM-Net: Real-time, Robust, Real-world Point Matching Network}, 
+      author={Yasaman Kashefbahrami and Erkut Akdag and Panagiotis Meletis and Evgeniya Balmashnova and Dip Goswami and Egor Bondarau},
+      year={2026},
+      eprint={2604.05060},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2604.05060}, 
 }
 ```
 

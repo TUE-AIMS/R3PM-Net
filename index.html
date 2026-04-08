@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>R3PM-Net: Real-time, Robust, Real-world Point Matching Network</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 
 <body>
@@ -29,7 +29,7 @@
       </p>
 
       <nav class="linkrow" aria-label="Project links">
-        <a class="pill pill-dark" href="TODO" target="_blank" rel="noopener">
+        <a class="pill pill-dark" href="https://arxiv.org/abs/2604.05060" target="_blank" rel="noopener">
           <span class="pill-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="18" height="18" role="img" focusable="false" aria-label="Paper">
               <path d="M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 1.5V8h4.5" />
@@ -48,11 +48,11 @@
           <span class="pill-text">Code</span>
         </a>
 
-        <a class="pill pill-dark" href="TODO" target="_blank" rel="noopener">
+        <a class="pill pill-dark" href="https://huggingface.co/datasets/YasiiKB/R3PM-Net" target="_blank" rel="noopener">
           <span class="pill-icon" aria-hidden="true">
             <span class="hf-emoji">🤗</span>
           </span>
-          <span class="pill-text">Hugging Face</span>
+          <span class="pill-text">Datasets</span>
         </a>
       </nav>
     </header>
@@ -64,40 +64,47 @@
       To this end, we additionally, propose two datasets, Sioux-Cranfield and Sioux-Scans. 
     </p>
 
-      <!-- IMPORTANT: ensure these filenames match exactly what you have in /figures -->
       <img class="figure" src="assets/r3pmnet_overview.png" alt="Method overview">
       <p class="caption">
-        Overview of the R3PM-Net Architecture. R3PM-Net employs an iterative Siamese framework for robust point cloud registration.
+        Overview of the R3PM-Net Architecture. R3PM-Net employs an iterative Siamese framework for robust point cloud registration
       </p>
     </section>
 
     <section>
       <h2>Datasets</h2>
-      <img class="figure figure-sm" src="assets/sioux_cranfield.png" alt="Sioux-Cranfield">
+      <img class="figure-sm" src="assets/sioux_cranfield.png" alt="Sioux-Cranfield">
       <p class="caption">
-        Sioux-Cranfield dataset.
+        Sioux-Cranfield dataset
       </p>
-      <img class="figure figure-sm" src="assets/sioux_scans.png" alt="Sioux-Scans">
+      <img class="figure-sm" src="assets/sioux_scans.png" alt="Sioux-Scans">
       <p class="caption">
-        Sioux-Scans dataset.
+        Sioux-Scans dataset
       </p>
     </section>
 
     <section>
       <h2>Results</h2>
-      <img class="figure figure-sm" src="assets/teaser.png" alt="Teaser">
+      <img class="figure-teaser" src="assets/teaser.png" alt="Teaser">
       <p class="caption">
-        R3PM-Net performance on the Sioux-Cranfield dataset.
+      R3PM-Net performance on the Sioux-Cranfield dataset
       </p>
-      <img class="figure" src="assets/sucess_cases.png" alt="Sucess Cases">
+      <img class="figure-sm" src="assets/success_cases.png" alt="Success cases">
       <p class="caption">
-      Success cases of R3PM-Net on the Sioux-Scans dataset.
+      Success cases of zero-shot (cube and teeth) and fine-tuned (all) R3PM-Net on the Sioux-Scans dataset
       </p>
     </section>
 
     <section>
       <h2>Citation</h2>
-      <pre class="bibtex">TODO</pre>
+      <pre class="bibtex">@misc{kashefbahrami2026r3pmnetrealtimerobustrealworld,
+        title={R3PM-Net: Real-time, Robust, Real-world Point Matching Network}, 
+        author={Yasaman Kashefbahrami and Erkut Akdag and Panagiotis Meletis and Evgeniya Balmashnova and Dip Goswami and Egor Bondarau},
+        year={2026},
+        eprint={2604.05060},
+        archivePrefix={arXiv},
+        primaryClass={cs.CV},
+        url={https://arxiv.org/abs/2604.05060}, 
+  }</pre>
     </section>
 
     <footer class="footer">

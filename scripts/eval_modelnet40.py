@@ -187,7 +187,7 @@ r3pm_net_args.pretrained = _path_zs
 tuned_r3pm_net_args = l3d_helper.options(modelName="R3PMNet")
 tuned_r3pm_net_args.pretrained = _path_ft
 
-for i, item in enumerate(tqdm(test_data[:100], desc="Testing methods")):
+for i, item in enumerate(tqdm(test_data, desc="Testing methods")):
     
    # Simulate data
     x_angle = int(random.uniform(0, 45))

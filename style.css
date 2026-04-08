@@ -138,24 +138,43 @@ h2{
   margin:0 0 10px;
 }
 
-/* Figures */
-.figure{
-  width:100%;
+.figure,
+.figure-sm,
+.figure-mid,
+.figure-teaser{
+  display:block;
+  height:auto;
+  margin:10px auto 0;
+  box-sizing:border-box;
   border-radius:12px;
   border:1px solid #eee;
-  margin-top:10px;
 }
 
-.figure-sm {
-  width: 40% !important;
-  max-width: 400px;
-  margin: 10px auto;
+.figure{
+  width:min(100%, 1100px);
+  max-height:min(68vh, 720px);
+}
+
+.figure-sm{
+  width:min(100%, 800px);
+}
+
+.figure-mid{
+  width:min(100%, 1100px);
+  max-height:min(52vh, 520px);
+}
+
+.figure-teaser{
+  width:min(30%, 800px);
+  max-height:none;
 }
 
 .caption{
   font-size:0.92rem;
   color:#555;
-  margin-top:6px;
+  margin:6px auto 0;
+  text-align:center;
+  max-width:52rem;
 }
 
 /* BibTeX */
