@@ -4,7 +4,7 @@
 
 This repository contains the official implementation of the paper:
 
-> **[R3PM-Net: Real-time, Robust, Real-world Point Matching Network (CVPRw 2026)]**
+> **[R3PM-Net: Real-time, Robust, Real-world Point Matching Network (CVPRw 2026)](https://arxiv.org/abs/2604.05060)**
 
 
 <p align="center"> <img src="assets/r3pmnet_overview.png" width="95%"> </p>
