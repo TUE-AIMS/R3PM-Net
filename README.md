@@ -99,6 +99,17 @@ Download the dataset from [Sioux_Scans](https://huggingface.co/datasets/YasiiKB/
 data/sioux_scans
 ```
 
+### Fine-tune 
+
+Download the pickle files (.pkl) from [here](https://huggingface.co/datasets/YasiiKB/R3PM-Net/blob/main/simulators.zip) and put them in:
+
+```
+data/simulators
+```
+These pickle files are created from a subset of the Sioux-Cranfield containing the "teeth", "cube", "lime" and "lego" CAD models. There are 320 point cloud pairs, with 80-20 train-test split. 
+
+Optionally, to create your own datasets, use the scripts in `dataloader`, refering to the README file in that directory.
+
 ## Pre-trained Models
 
 Please download the pretrained model of each method from their repo (links provided above) and follow their instructions as to where to put them.
@@ -144,17 +155,12 @@ r3pm_net/
 └── README.md
 ```
 
-## Fine-tune 
+## Train 
 
-Download the pickle files (.pkl) from [here](https://huggingface.co/datasets/YasiiKB/R3PM-Net/blob/main/simulators.zip) and put them in:
-
+To train the model using `data/simulators` or your own dataset run:
+```bash
+python src/train.py
 ```
-data/simulators
-```
-These pickle files are created from a subset of the Sioux-Cranfield containing the "teeth", "cube", "lime" and "lego" CAD models. There are 320 point cloud pairs, with 80-20 train-test split. 
-
-
-Optionally, to create your own datasets, use the scripts in `dataloader`, refering to the README file in that directory
 
 ## Evaluation
 
