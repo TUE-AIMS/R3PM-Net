@@ -18,7 +18,7 @@ unset -f conda 2>/dev/null
 source "$HOME/miniconda3/etc/profile.d/conda.sh"
 
 # Activate the conda environment
-conda activate r3pm
+conda activate r3pm_net
 
 
 if [[ -n "${SLURM_SUBMIT_DIR:-}" ]]; then

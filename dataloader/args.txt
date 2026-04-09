@@ -1,5 +1,5 @@
---pcdPath /home/ykashefbahrami/r3pm_net/data/sioux_scans/teeth_clean.ply
---cadPath /home/ykashefbahrami/r3pm_net/data/sioux_cranfield/teeth.stl
+--pcdPath data/sioux_scans/teeth_clean.ply
+--cadPath data/sioux_cranfield/teeth.stl
 --action combine_dataset_dict
 --name teeth
 --every_k_points 100
