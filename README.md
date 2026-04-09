@@ -1,25 +1,34 @@
-# R3PM-Net
+<!-- # R3PM-Net
 
 
 
 This repository contains the official implementation of the paper:
 
-> **[R3PM-Net: Real-time, Robust, Real-world Point Matching Network (CVPRw 2026)](https://arxiv.org/abs/2604.05060)**
+<p align="center">
+  <strong><a href="https://arxiv.org/abs/2604.05060">R3PM-Net: Real-time, Robust, Real-world Point Matching Network</a></strong><br>
+  <strong>(AI4RWC@CVPRW 2026 - Oral Presentation)</strong>
+</p> -->
 
+<p align="center">
 
+  <h1 align="center">R3PM-Net: Real-time, Robust, Real-world Point Matching Network</h1>
+<p align="center"> <strong>AI4RWC@CVPRW 2026 - Oral Presentation</strong></p>
+  <h3 align="center"><a href="https://arxiv.org/abs/2604.05060">Paper</a> | <a href="https://yasiikb.github.io/R3PM-Net/">Project Page</a> | <a href="https://huggingface.co/datasets/YasiiKB/R3PM-Net">Dataset</a></h3>
+  <div align="center"></div>
+</p>
 <p align="center"> <img src="assets/r3pmnet_overview.png" width="95%"> </p>
-<p align="left"><i>Figure 1. Overview of the R3PM-Net Architecture. R3PM-Net employs an iterative Siamese framework for robust point cloud registration.</i></p>
+<p align="left"><i>Figure 1. Overview of the R3PM-Net Architecture. R3PM-Net employs a global-aware feature extraction module with shared weights to learn geometric similarities across a full receptive field.</i></p>
 
 ## Introduction
 
 R3PM-Net is a lightweight, global-aware, object-level point matching network designed to bridge the gap between approaches trained and evaluated on clean, dense, synthetic and real-world industrial point cloud data by prioritizing both generalizability and real-time efficiency.
 
-<p align="center"> <img src="assets/teaser.png" width="50%"> </p>
+<p align="center"> <img src="assets/teaser.png" width="40%"> </p>
 <p align="left"><i>Figure 2. Examples of R3PM-Net performance on the Sioux-Cranfield dataset.</i></p>
 
 ### Datasets
 
-To address the gap between synthetic datasets and real-world industrial data, we propose two datasets, Sioux-Cranfield and Sioux-Scans. 
+We propose two datasets; **Sioux-Cranfield** and **Sioux-Scans**, to address the gap between synthetic datasets and real-world industrial data.
 
 <p align="center">
   <table>
@@ -68,7 +77,7 @@ Download the dataset from [ModelNet40](http://modelnet.cs.princeton.edu/ModelNet
 data/ModelNet40
 ```
 
-To save time, download the downsampled ModelNet40 from [ModelNet40_Downsampled](https://drive.google.com/file/d/1FJjPgJA4JehDLH2m-adbFamfBGcGp6an/view?usp=sharing) and put it in:
+To save time, download the downsampled ModelNet40 test set from [ModelNet40_Downsampled](https://huggingface.co/datasets/YasiiKB/R3PM-Net/blob/main/down_sampled_modelnet40.zip) and put it in:
 
 ```
 data/down_sampled_modelnet40
@@ -76,7 +85,7 @@ data/down_sampled_modelnet40
 
 ### Sioux-Cranfield
 
-Download the dataset from [Sioux_Cranfiled](https://drive.google.com/file/d/1oafYAFWWmagAhTc1kBtlL_mjqYNhSsPQ/view?usp=sharing) and put it in:
+Download the dataset from [Sioux_Cranfiled](https://huggingface.co/datasets/YasiiKB/R3PM-Net/blob/main/sioux_cranfield.zip) and put it in:
 
 ```
 data/sioux_cranfield
@@ -84,7 +93,7 @@ data/sioux_cranfield
 
 ### Sioux-Scans
 
-Download the dataset from [Sioux_Scans](https://drive.google.com/file/d/1WSe5wxuyG66_cwgeHXdvJZU2KxDTYlqY/view?usp=sharing) and put it in:
+Download the dataset from [Sioux_Scans](https://huggingface.co/datasets/YasiiKB/R3PM-Net/blob/main/sioux_scans.zip) and put it in:
 
 ```
 data/sioux_scans
@@ -135,13 +144,15 @@ r3pm_net/
 └── README.md
 ```
 
-## Train
+## Fine-tune 
 
-Download the tranin and test files from [here](https://drive.google.com/file/d/1MFNLFobkrix0voRzg4L9CrhPjJEHFEmN/view?usp=sharing) and put them in:
+Download the pickle files (.pkl) from [here](https://huggingface.co/datasets/YasiiKB/R3PM-Net/blob/main/simulators.zip) and put them in:
 
 ```
 data/simulators
 ```
+These pickle files are created from a subset of the Sioux-Cranfield containing the "teeth", "cube", "lime" and "lego" CAD models. There are 320 point cloud pairs, with 80-20 train-test split. 
+
 
 Optionally, to create your own datasets, use the scripts in `dataloader`, refering to the README file in that directory
 

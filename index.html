@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>R3PM-Net: Real-time, Robust, Real-world Point Matching Network</title>
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 
 <body>
@@ -12,7 +12,7 @@
     <header class="hero">
       <h1>R3PM-Net: Real-time, Robust, Real-world Point Matching Network</h1>
 
-      <p class="venue">CVPRw 2026 - Oral Presentation</p>
+      <p class="venue"> AI4RWC@CVPRW 2026 - Oral Presentation</p>
 
       <p class="authors">
         <a class="author-link" href="https://research.tue.nl/en/persons/yasaman-kashefbahrami/" target="_blank" rel="noopener">Yasaman Kashefbahrami</a><sup>1</sup><span class="comma">,</span>
@@ -66,31 +66,66 @@
 
       <img class="figure" src="assets/r3pmnet_overview.png" alt="Method overview">
       <p class="caption">
-        Overview of the R3PM-Net Architecture. R3PM-Net employs an iterative Siamese framework for robust point cloud registration
+        Overview of the R3PM-Net Architecture. R3PM-Net employs a global-aware feature extraction module with shared weights to learn geometric similarities across a full receptive field.
       </p>
     </section>
 
     <section>
       <h2>Datasets</h2>
-      <img class="figure-sm" src="assets/sioux_cranfield.png" alt="Sioux-Cranfield">
-      <p class="caption">
-        Sioux-Cranfield dataset
+      <p>
+        We propose two new datasets; <b>Sioux-Cranfield</b> and <b>Sioux-Scans</b>, to address the gap between synthetic datasets and real-world industrial data.
       </p>
-      <img class="figure-sm" src="assets/sioux_scans.png" alt="Sioux-Scans">
-      <p class="caption">
-        Sioux-Scans dataset
+      <h3>Sioux-Cranfield</h3>
+      <p>
+        Sioux-Cranfield is a diverse collection of 13 objects designed to evaluate model robustness across varying data qualities. The dataset contains 4
+        computer-aided design (CAD) models generated via photogrammetric reconstruction, 3 synthetic CAD models, and 6 pristine geometries from the <a href="https://github.com/Menthy-Denayer/PCR_CAD_Model_Alignment_Comparison/tree/main/datasets" target="_blank" rel="noopener">Cranfield Benchmark</a>. This combination allows for a comprehensive evaluation of performance on both high-quality synthetic meshes and realistically imperfect reconstructions.
+       </p>
+      
+       <h3>Sioux-Scans</h3>
+      <p>
+        This dataset addresses the real-world challenge of registering physical scans to digital models. 
+        The targets are CAD models of seven small objects (shared with Sioux-Cranfield), while the sources are raw event-camera scans of the corresponding objects acquired via the custom Quality Control <a href="https://brainporteindhoven.com/fileadmin/user_upload/TechMarkt/Advanced_Manufacturing/3DOP_Presentation_WP4.pdf" target="_blank" rel="noopener">Sioux 3DoP setup</a>. 
+        To generate these scans, the setup utilizes a laser beam and an event-based camera to produce accurate point clouds from moving or handheld objects. 
+        Unlike traditional frame-based sensors, this camera captures discrete brightness changes as the laser sweeps across the surface, resulting in highly precise point clouds. 
+        Before processing, gross outliers were filtered. However, these data represent a substantially more challenging setting than synthetic benchmarks, as they reflect inevitable deficiencies, such as sparsity, noise, and occlusions, rarely present in ideal simulated datasets. 
+        These artifacts stem from sensor noise, lighting sensitivity, and viewpoint-dependent gaps, particularly on sharp edges or reflective surfaces.
       </p>
+
+      <div class="figure-row">
+        <div class="figure-pair">
+          <img class="figure-sm" src="assets/sioux_cranfield.png" alt="Sioux-Cranfield">
+          <p class="caption">
+            Sioux-Cranfield dataset
+          </p>
+        </div>
+        <div class="figure-pair">
+          <img class="figure-sm" src="assets/sioux_scans.png" alt="Sioux-Scans">
+          <p class="caption">
+            Sioux-Scans dataset
+          </p>
+        </div>
+      </div>
     </section>
 
     <section>
       <h2>Results</h2>
+      <h3>Sioux-Cranfield</h3>
+      <p>
+        R3PM-Net demonstrates stable performance on the Sioux-Cranfield dataset, maintaining a perfect Fitness score of 1 and outperforming other baseline methods across nearly all metrics. 
+        It achieves comparable results to the more complex state-of-the-art methods, yet with a decisive efficiency advantage, performing at an inference speed over 6.5 times faster.
+      </p>
       <img class="figure-teaser" src="assets/teaser.png" alt="Teaser">
       <p class="caption">
-      R3PM-Net performance on the Sioux-Cranfield dataset
+      R3PM-Net performance on the Sioux-Cranfield dataset.
+      </p>
+      <h3>Sioux-Scans</h3>
+      <p>
+      R3PM-Net matches the 28.6% success rate of the baselines through a minimalist feature-extraction approach, in contrast to the more complex backbones employed by other methods. 
+      While all models solve the less challenging symmetrical cases, R3PM-Net successfully registers objects with complex geometries, such as the "teeth" model, where all other approaches fail.  
       </p>
       <img class="figure-sm" src="assets/success_cases.png" alt="Success cases">
       <p class="caption">
-      Success cases of zero-shot (cube and teeth) and fine-tuned (all) R3PM-Net on the Sioux-Scans dataset
+      Success cases of zero-shot (cube and teeth) and fine-tuned (all) R3PM-Net on the Sioux-Scans dataset.
       </p>
     </section>
 
